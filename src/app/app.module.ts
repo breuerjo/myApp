@@ -10,6 +10,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';       //Einbinden Material Animationen
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';               //Einbinden Material Buttons und Checkbox
+import { NewPlacePage } from '../pages/new-place/new-place';
+import { PlacesService } from '../services/places.service';
+
 
 @NgModule({
   declarations: [
@@ -17,11 +22,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    NewPlacePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,12 +38,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    NewPlacePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, 
+    PlacesService
   ]
 })
 export class AppModule {}
