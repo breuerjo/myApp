@@ -18,4 +18,8 @@ export class NewPlacePage {
     this.navCtrl.pop();                     //vorherige Seite aus Stack holen => zurück zur vorherign Seite navigieren
   }
 
+  newFunktinea() {
+    
+  }
+
 }
